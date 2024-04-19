@@ -6,5 +6,5 @@ public interface StudentRepository {
     void save(Student student);
     void update(Student student);
 
-    ArrayList<Student> readStudents();
+    ArrayList<Student> leerStudents();
 }

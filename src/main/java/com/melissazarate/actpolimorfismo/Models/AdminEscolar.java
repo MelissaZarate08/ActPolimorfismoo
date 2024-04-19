@@ -30,7 +30,7 @@ public class AdminEscolar {
     public ArrayList<Student> readFromDatabases(){
         ArrayList<Student> allStudents = new ArrayList<>();
         for (StudentRepository base : bases){
-            allStudents.addAll(base.readStudents());
+            allStudents.addAll(base.leerStudents());
         }
         return allStudents;
     }

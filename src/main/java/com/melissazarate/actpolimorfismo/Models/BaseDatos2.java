@@ -22,7 +22,7 @@ public class BaseDatos2 implements StudentRepository {
         }
     }
     @Override
-    public ArrayList<Student> readStudents(){
+    public ArrayList<Student> leerStudents(){
         return new ArrayList<>(estudiante1);
     }
 }
