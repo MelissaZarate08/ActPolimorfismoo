@@ -4,49 +4,66 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="658.0" prefWidth="522.0" style="-fx-background-color: #244978; -fx-border-color: #CAA215; -fx-border-radius: 5; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.melissazarate.actpolimorfismo.Controllers.HomeController">
+<VBox prefHeight="568.0" prefWidth="522.0" style="-fx-background-color: #244978; -fx-border-color: #CAA215; -fx-border-radius: 5; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.melissazarate.actpolimorfismo.Controllers.HomeController">
    <children>
-      <AnchorPane prefHeight="86.0" prefWidth="383.0" style="-fx-background-color: #244978;">
+      <AnchorPane prefHeight="124.0" prefWidth="516.0" style="-fx-background-color: #244978;">
          <children>
-            <Label layoutX="79.0" layoutY="25.0" text="INSTITUTO DESCARTES" textFill="WHITE">
+            <Label layoutX="117.0" layoutY="45.0" text="INSTITUTO DESCARTES" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="83.0" fitWidth="70.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="103.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/logo.jpg" />
                </image>
             </ImageView>
+            <Label layoutX="117.0" layoutY="80.0" text="Gestión de estudiantes" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="idAlumnoField" prefHeight="50.0" prefWidth="516.0" promptText="ID Alumno" style="-fx-border-color: #244978;" />
-      <TextField fx:id="nombreField" prefHeight="50.0" prefWidth="516.0" promptText="Nombre" style="-fx-border-color: #244978;" />
-      <TextField fx:id="apellidoField" prefHeight="50.0" prefWidth="516.0" promptText="Apellido" style="-fx-border-color: #244978;" />
-      <TextField fx:id="edadField" prefHeight="50.0" prefWidth="516.0" promptText="Edad" style="-fx-border-color: #244978;" />
-      <TextField fx:id="nivelAcademicoField" prefHeight="50.0" prefWidth="516.0" promptText="Nivel Académico" style="-fx-border-color: #244978;" />
-      <AnchorPane prefHeight="77.0" prefWidth="516.0">
-         <children>
-            <Button fx:id="GuardarButton" layoutX="14.0" layoutY="17.0" onAction="#SaveStudentButton" prefHeight="28.0" prefWidth="234.0" style="-fx-background-color: BAC5FF; -fx-border-color: BAC5FF;" text="Guardar" />
-            <Button fx:id="UpdateButton" layoutX="267.0" layoutY="17.0" onAction="#UpdateStudentButton" prefHeight="28.0" prefWidth="234.0" style="-fx-background-color: BAC5FF; -fx-border-color: BAC5FF;" text="Actualizar" />
-         </children>
-      </AnchorPane>
-      <TableView fx:id="studentTableView" prefHeight="314.0" prefWidth="516.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #244978; -fx-border-width: 5;">
+      <TableView fx:id="studentTableView" prefHeight="307.0" prefWidth="516.0" style="-fx-background-color: #FAFFD3; -fx-border-color: #244978; -fx-border-width: 5;">
          <columns>
-            <TableColumn fx:id="idAlumnoColumn" prefWidth="71.20001792907715" text="ID Alumno" />
-            <TableColumn fx:id="nombreColumn" prefWidth="108.79998779296875" text="Nombre" />
+            <TableColumn fx:id="idAlumnoColumn" text="ID Alumno" />
+            <TableColumn fx:id="nombreColumn" prefWidth="99.20001983642578" text="Nombre" />
             <TableColumn fx:id="apellidoColumn" prefWidth="94.4000244140625" text="Apellido" />
             <TableColumn fx:id="edadColumn" prefWidth="92.00006103515625" text="Edad" />
             <TableColumn fx:id="nivelAcademicoColumn" prefWidth="153.59988403320312" text="Nivel Académico" />
          </columns>
       </TableView>
-      <Button fx:id="CloseButton" mnemonicParsing="false" onAction="#CloseButton" prefHeight="44.0" prefWidth="516.0" style="-fx-background-color: BAC5FF; -fx-border-color: #244978; -fx-border-width: 5;" text="CERRAR" textAlignment="RIGHT" />
+      <AnchorPane prefHeight="90.0" prefWidth="516.0">
+         <children>
+            <Button fx:id="addButton" alignment="BASELINE_LEFT" layoutX="34.0" layoutY="23.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="43.0" prefWidth="198.0" style="-fx-background-color: BAC5FF;" text="Agregar Estudiante">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateButton" alignment="BASELINE_LEFT" layoutX="270.0" layoutY="23.0" mnemonicParsing="false" onAction="#updateButttonAction" prefHeight="43.0" prefWidth="215.0" style="-fx-background-color: BAC5FF;" text="Modificar Estudiante">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="addIcono" fitHeight="36.0" fitWidth="39.0" layoutX="188.0" layoutY="27.0" onDragDetected="#addIconoAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/agregarStudentLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="updateIcono" fitHeight="50.0" fitWidth="55.0" layoutX="427.0" layoutY="20.0" onDragDetected="#updateIconoAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/editStudentlogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="CloseButton" mnemonicParsing="false" onAction="#CloseButton" prefHeight="38.0" prefWidth="516.0" style="-fx-background-color: BAC5FF; -fx-border-color: #244978; -fx-border-width: 5;" text="CERRAR" textAlignment="RIGHT" />
    </children>
 </VBox>

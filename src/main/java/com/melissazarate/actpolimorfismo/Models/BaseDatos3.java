@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class BaseDatos3 implements StudentRepository {
 
-    private ArrayList<Student> student3 = new ArrayList<>();
+    private ArrayList<Student> estudiantee = new ArrayList<>();
     @Override
     public void save(Student student) {
-        student3.add(student);
+        estudiantee.add(student);
     }
     @Override
     public void update(Student student){
-        for (Student e : student3){
+        for (Student e : estudiantee){
             if (e.getIdAlumno()==student.getIdAlumno()){
                 e.setNombre(student.getNombre());
                 e.setApellido(student.getApellido());
@@ -23,7 +23,7 @@ public class BaseDatos3 implements StudentRepository {
     }
     @Override
     public ArrayList<Student> readStudents(){
-        return new ArrayList<>(student3);
+        return new ArrayList<>(estudiantee);
     }
 }
 

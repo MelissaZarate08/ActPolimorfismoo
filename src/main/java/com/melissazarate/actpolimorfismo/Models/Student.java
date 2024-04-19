@@ -7,11 +7,11 @@ public class Student {
     private int edad;
     private String nivelAcademico;
 
-    public Student(String idAlumno, String nombre, String apellido, String edad, String nivelAcademico) {
-        this.idAlumno = Integer.parseInt(idAlumno);
+    public Student(int idAlumno, String nombre, String apellido, int edad, String nivelAcademico) {
+        this.idAlumno = idAlumno;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.edad = Integer.parseInt(edad);
+        this.edad = edad;
         this.nivelAcademico = nivelAcademico;
 
     }
@@ -54,15 +54,5 @@ public class Student {
 
     public void setNivelAcademico(String nivelAcademico) {
         this.nivelAcademico = nivelAcademico;
-    }
-    @Override
-    public String toString(){
-        return "Student{" +
-                "ID='" + idAlumno + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad='" + edad + '\'' +
-                ", nivel academico=" + nivelAcademico +
-                '}';
     }
 }
